@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class Calculator extends StatefulWidget {
-  const Calculator({super.key});
+class CalculatorWidget extends StatefulWidget {
+  const CalculatorWidget({super.key});
 
   @override
   _CalculatorState createState() => _CalculatorState();
 }
 
-class _CalculatorState extends State<Calculator> {
+class _CalculatorState extends State<CalculatorWidget> {
   String output = "0";
   String _output = "0";
   double num1 = 0.0;

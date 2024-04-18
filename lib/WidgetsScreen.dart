@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment/calculator_page.dart';
-import 'package:flutter_assignment/notes_page.dart';
-import 'package:flutter_assignment/weatherWidget.dart';
+import 'package:flutter_assignment/CalculatorWidget.dart';
+import 'package:flutter_assignment/NotesWidget.dart';
+import 'package:flutter_assignment/WeatherWidget.dart';
 
 class WidgetsPage extends StatelessWidget {
   const WidgetsPage({super.key});
@@ -24,8 +24,8 @@ class WidgetsPage extends StatelessWidget {
         ),
         body: const TabBarView(
           children: [
-            NotesPage(),
-            Calculator(),
+            NotesWidget(),
+            CalculatorWidget(),
             WeatherWidget(),
           ],
         ),

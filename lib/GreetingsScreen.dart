@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment/WidgetsPage.dart';
+import 'package:flutter_assignment/WidgetsScreen.dart';
 
-class GreetingPage extends StatelessWidget {
-  const GreetingPage({super.key});
+class GreetingScreen extends StatelessWidget {
+  const GreetingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

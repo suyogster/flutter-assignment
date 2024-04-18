@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class NotesPage extends StatefulWidget {
-  const NotesPage({super.key});
+class NotesWidget extends StatefulWidget {
+  const NotesWidget({super.key});
 
   @override
   _NotesPageState createState() => _NotesPageState();
 }
 
-class _NotesPageState extends State<NotesPage> {
+class _NotesPageState extends State<NotesWidget> {
   final List<String> _notes = [];
 
   final TextEditingController _textController = TextEditingController();

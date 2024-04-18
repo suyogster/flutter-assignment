@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment/greeting_page.dart';
+import 'package:flutter_assignment/GreetingsScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         useMaterial3: true,
       ),
-      home: const GreetingPage(),
+      home: const GreetingScreen(),
     );
   }
 }
