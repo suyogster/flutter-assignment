@@ -1,42 +1,55 @@
 // ignore_for_file: library_private_types_in_public_api
 
+// Importing the material.dart package which contains Flutter widgets.
 import 'package:flutter/material.dart';
 
+// Define a stateful widget named CalculatorWidget.
 class CalculatorWidget extends StatefulWidget {
-  const CalculatorWidget({super.key});
+  const CalculatorWidget({super.key}); // Constructor for CalculatorWidget.
 
   @override
-  _CalculatorState createState() => _CalculatorState();
+  _CalculatorState createState() =>
+      _CalculatorState(); // Create state for the widget.
 }
 
+// Define the state for CalculatorWidget.
 class _CalculatorState extends State<CalculatorWidget> {
-  String output = "0";
-  String _output = "0";
-  double num1 = 0.0;
-  double num2 = 0.0;
-  String operand = "";
+  String output =
+      "0"; // Variable to hold the output displayed on the calculator.
+  String _output = "0"; // Internal variable to track output.
+  double num1 = 0.0; // Variable to hold the first operand.
+  double num2 = 0.0; // Variable to hold the second operand.
+  String operand = ""; // Variable to hold the operator (+, -, *, /).
 
+  // Function to handle button presses.
   buttonPressed(String buttonText) {
+    // Clear all variables if "C" (clear) button is pressed.
     if (buttonText == "C") {
       _output = "0";
       num1 = 0.0;
       num2 = 0.0;
       operand = "";
-    } else if (buttonText == "+" ||
+    }
+    // Set the operator if one of the operator buttons is pressed.
+    else if (buttonText == "+" ||
         buttonText == "-" ||
         buttonText == "/" ||
         buttonText == "*") {
       num1 = double.parse(output);
       operand = buttonText;
       _output = "0";
-    } else if (buttonText == ".") {
+    }
+    // Handle decimal input.
+    else if (buttonText == ".") {
       if (_output.contains(".")) {
         print("decimals present");
         return;
       } else {
         _output = _output + buttonText;
       }
-    } else if (buttonText == "=") {
+    }
+    // Perform calculation when "=" button is pressed.
+    else if (buttonText == "=") {
       num2 = double.parse(output);
 
       if (operand == "+") {
@@ -55,15 +68,19 @@ class _CalculatorState extends State<CalculatorWidget> {
       num1 = 0.0;
       num2 = 0.0;
       operand = "";
-    } else {
+    }
+    // Handle numeric input.
+    else {
       _output = _output + buttonText;
     }
 
+    // Update the output and re-render the widget.
     setState(() {
       output = double.parse(_output).toStringAsFixed(2);
     });
   }
 
+  // Function to build calculator buttons.
   Widget buildButton(String buttonText) {
     return Expanded(
       child: Padding(
@@ -87,14 +104,16 @@ class _CalculatorState extends State<CalculatorWidget> {
     );
   }
 
+  // Build the UI for the CalculatorWidget.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          // title: const Text("Calculator"),
+          // title: const Text("Calculator"), // You can add a title here if needed.
           ),
       body: Column(
         children: <Widget>[
+          // Display the output at the top.
           Container(
             alignment: Alignment.centerRight,
             padding: const EdgeInsets.symmetric(
@@ -106,8 +125,9 @@ class _CalculatorState extends State<CalculatorWidget> {
                     fontSize: 48.0, fontWeight: FontWeight.bold)),
           ),
           const Expanded(
-            child: Divider(),
+            child: Divider(), // Add a divider for visual separation.
           ),
+          // Build rows of buttons for the calculator.
           Column(children: [
             Row(children: [
               buildButton("7"),
